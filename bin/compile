@@ -23,7 +23,7 @@ if [ "$ssh_key" != "" ]; then
 
 	IFS='|' read -ra HOST <<< "$ssh_hosts"
 	for i in "${HOST[@]}"; do
-		echo $i | indent
+		echo "-----> Adding something in hosts file"
 		ssh -oStrictHostKeyChecking=no -T $i 2>&1 | indent
 	done
 
